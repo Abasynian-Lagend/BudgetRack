@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "207015743190",
+    "project_id": "budgetrack-d1f97",
+    "storage_bucket": "budgetrack-d1f97.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207015743190:android:260f8fa8496d4b886b0377",
+        "android_client_info": {
+          "package_name": "com.example.e_comm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_ITSx8LEdScBM46WreGZUEViSfV2ljbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
