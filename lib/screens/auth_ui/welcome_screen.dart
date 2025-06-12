@@ -1,11 +1,14 @@
-import 'package:e_comm/screens/auth_ui/login_screen.dart';
+import 'package:e_comm/controllers/googleSignIn_controller.dart';
+import 'package:e_comm/screens/auth_ui/signin_screen.dart';
 import 'package:e_comm/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  WelcomeScreen({super.key});
+
+  final GoogleSignInController _googleSignInController = Get.put(GoogleSignInController());
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +32,6 @@ class WelcomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text('Welcome to BudgetRack'),
-        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -43,7 +44,7 @@ class WelcomeScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: AppConstants.appStatusBarColor,
+                color: AppConstants.appPrimaryTextColor,
               ),
             ),
           ),
@@ -56,7 +57,9 @@ class WelcomeScreen extends StatelessWidget {
               width: Get.width,
               child: ElevatedButton.icon(
                 icon: const Icon(Icons.g_mobiledata_outlined, size: 24),
-                onPressed: () {},
+                onPressed: () {
+                  _googleSignInController.signInWithGoogle();
+                },
                 label: const Text('Sign-In with Google'),
                 style: buttonStyle,
               ),
@@ -73,7 +76,7 @@ class WelcomeScreen extends StatelessWidget {
               child: ElevatedButton.icon(
                 icon: const Icon(Icons.email_outlined, size: 24),
                 onPressed: () {
-                  Get.offAll(() => LoginScreen());
+                  Get.to(() => SignInScreen());
                 },
                 label: const Text('Sign-In with Email'),
                 style: buttonStyle,

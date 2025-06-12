@@ -3,6 +3,7 @@ import 'package:e_comm/firebase_options.dart';
 import 'package:e_comm/screens/auth_ui/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SplashScreen(),
+      builder: EasyLoading.init(),
     );
   }
 }
